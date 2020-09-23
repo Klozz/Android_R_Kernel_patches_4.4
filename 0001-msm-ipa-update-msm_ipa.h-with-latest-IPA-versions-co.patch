@@ -1,0 +1,50 @@
+From 948b8435d0b732ad244be79a9c3f6cb2c47c9467 Mon Sep 17 00:00:00 2001
+From: Ghanim Fodi <gfodi@codeaurora.org>
+Date: Tue, 14 Aug 2018 13:15:36 +0300
+Subject: [PATCH] msm: ipa: update msm_ipa.h with latest IPA versions constants
+
+This is needed so common components between kernel
+4.9 and kernel 4.14 can compile OK.
+
+CRs-Fixed: 2295428
+Change-Id: I36b28c0f9ee4a4aca1303d298e88b98cceac36e3
+Signed-off-by: Ghanim Fodi <gfodi@codeaurora.org>
+---
+ include/uapi/linux/msm_ipa.h | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/include/uapi/linux/msm_ipa.h b/include/uapi/linux/msm_ipa.h
+index 296784dcca6d..ca9dd6adc708 100644
+--- a/include/uapi/linux/msm_ipa.h
++++ b/include/uapi/linux/msm_ipa.h
+@@ -535,6 +535,9 @@ enum ipa_rm_resource_name {
+  * @IPA_HW_v3_5: IPA hardware version 3.5
+  * @IPA_HW_v3_5_1: IPA hardware version 3.5.1
+  * @IPA_HW_v4_0: IPA hardware version 4.0
++ * @IPA_HW_v4_1: IPA hardware version 4.1
++ * @IPA_HW_v4_2: IPA hardware version 4.2
++ * @IPA_HW_v4_5: IPA hardware version 4.5
+  */
+ enum ipa_hw_type {
+ 	IPA_HW_None = 0,
+@@ -550,10 +553,16 @@ enum ipa_hw_type {
+ 	IPA_HW_v3_5 = 12,
+ 	IPA_HW_v3_5_1 = 13,
+ 	IPA_HW_v4_0 = 14,
++	IPA_HW_v4_1 = 15,
++	IPA_HW_v4_2 = 16,
++	IPA_HW_v4_5 = 17,
+ };
+-#define IPA_HW_MAX (IPA_HW_v4_0 + 1)
++#define IPA_HW_MAX (IPA_HW_v4_5 + 1)
+ 
+ #define IPA_HW_v4_0 IPA_HW_v4_0
++#define IPA_HW_v4_1 IPA_HW_v4_1
++#define IPA_HW_v4_2 IPA_HW_v4_2
++#define IPA_HW_v4_5 IPA_HW_v4_5
+ 
+ /**
+  * struct ipa_rule_attrib - attributes of a routing/filtering
+-- 
+2.25.1
+
